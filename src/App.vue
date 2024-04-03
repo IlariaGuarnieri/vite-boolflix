@@ -16,15 +16,12 @@ export default {
   },
   methods:{
     getApi(){
-      this.store.cardsList = [];
-      console.log('GET API');
-      console.log(this.store);
-      axios.get(this.store.apiUrl, {
+      axios.get(store.apiUrl, {
         params: store.queryParams
       })
       .then(result=>{
-        this.store.cardsList = result.data;
-        console.log(this.store.cardsList);
+        store.cardMovieList = result.data.results;
+        console.log(store.cardMovieList);
       })
       .catch( error=>{
         console.log(error);

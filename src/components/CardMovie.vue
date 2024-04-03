@@ -14,9 +14,10 @@ export default {
     <div class="mt-3">
       <img :src="image" class="photo card-img-top" :alt="name">
       <div class="card-body">
-        <h5 class="card-title mt-3">{{ name }}</h5>
+        <h5 class="card-title mt-3">{{ title }}</h5>
         <h6 class="card-title">{{ original_title }}</h6>
-        <p class="text-center">{{ vote }}</p>
+        <p class="text-center">{{ vote-average }}</p>
+        <p class="text-center">{{ original_language }}</p>
       </div>
     </div>
   </div>
