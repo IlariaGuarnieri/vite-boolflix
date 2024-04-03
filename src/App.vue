@@ -17,19 +17,22 @@ export default {
   methods:{
     getApi(){
       this.store.cardsList = [];
-      console.log('GET API')
-      console.log(this.store)
+      console.log('GET API');
+      console.log(this.store);
       axios.get(this.store.apiUrl, {
         params: store.queryParams
       })
-      .then(results=>{
-        this.store.cardsList = result.data.results;
+      .then(result=>{
+        this.store.cardsList = result.data;
         console.log(this.store.cardsList);
       })
       .catch( error=>{
         console.log(error);
       })
     }
+  },
+  mounted() {
+    this.getApi()
   }
 }
 </script>

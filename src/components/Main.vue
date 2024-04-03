@@ -7,16 +7,20 @@ export default {
     }
   },
   methods:{
-    
+
   }
 }
 </script>
 
 <template>
-  <div class="text-center my-5">
+  <div class=" container text-center">
     
   </div>
 </template>
 
 <style lang="scss" scoped>
+.container{
+  background-color: rgb(38, 38, 38);
+  height: 100vh;
+}
 </style>
