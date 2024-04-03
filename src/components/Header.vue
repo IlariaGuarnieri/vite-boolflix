@@ -26,7 +26,7 @@ export default {
 @use '../../src/assets/scss/partials/variables' as *;
 
 .container{
-  height: 150px;
+  height: 100px;
   background-color: $main-color;
     h1{
       color : $primary-color;

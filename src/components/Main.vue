@@ -3,7 +3,7 @@ import CardMovie from './CardMovie.vue';
 import {store} from '../data/store'
 export default {
   components:{
-    CardMovie,
+    CardMovie
   },
   data() {
     return {
@@ -22,18 +22,18 @@ export default {
       <CardMovie 
       v-for=" card in store.cardMovieList" 
       :key="card.id" 
-      :title="title"
-      :original_title="original_title"
-      :original_language="original_language"
-      :vote-average="vote-average"
+      :title="card.title"
+      :original_title="card.original_title"
+      :original_language="card.original_language"
+      :vote-average="card.vote-average"
       />
     </div>
 </div>
 </template>
 
 <style lang="scss" scoped>
-.container{
-  background-color: rgb(38, 38, 38);
-  height: 100vh;
-}
+// .container{
+  // background-color: rgb(38, 38, 38);
+  // height: 100vh;
+// }
 </style>
