@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div class="text-center my-5">
-    <button @click="store.counter++" class="btn btn-primary"> incrementa contatore</button>
+    
   </div>
 </template>
 

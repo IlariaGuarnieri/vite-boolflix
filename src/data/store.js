@@ -1,5 +1,6 @@
 import { reactive } from 'vue'
 
 export const store = reactive ({
-  counter: 0
+  // qui ci metto le info globali (per ora)
+  mainTitle: 'BoolFlix',
 })
