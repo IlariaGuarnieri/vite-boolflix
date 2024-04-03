@@ -6,6 +6,9 @@ export default {
       store
     }
   },
+  methods:{
+    
+  }
 }
 </script>
 
