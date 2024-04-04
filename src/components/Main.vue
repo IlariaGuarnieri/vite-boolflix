@@ -1,34 +1,39 @@
 <script>
 import CardMovie from './CardMovie.vue';
 import {store} from '../data/store'
+
 export default {
   components:{
     CardMovie
+  },
+  props:{
+    type: String
   },
   data() {
     return {
       store
     }
   },
-  methods:{
-
+  computed:{
+    title(){
+      return this.thype === 'movie' ? 'film' : 'Serie TV'
+    }
   }
 }
 </script>
 
 <template>
-  <div class="text-center container">
+  <div class="text-center container my-5">
+    <h2>{{ title }}</h2>
     <div class="row row-cols-4">
       <CardMovie 
-      v-for=" card in store.cardMovieList" 
+      v-for=" card in store[type]" 
       :key="card.id" 
       :title="card.title"
-      :original_title="card.original_title"
-      :original_language="card.original_language"
-      :vote-average="card.vote-average"
+      :cardObj="card"
       />
     </div>
-</div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

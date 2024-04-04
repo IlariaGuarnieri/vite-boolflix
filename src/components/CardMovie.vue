@@ -1,23 +1,25 @@
 <script>
+import {store} from '../data/store'
 export default {
   props:{
-    title: String,
-    original_title: String,
-    language:String,
-    vote: String,
-  }
+    // title: String,
+    // original_title: String,
+    // language:String,
+    // vote: String,
+    cardObj: Object,
+  },
 }
 </script>
 
 <template>
-  <div class="col mb-3">
-    <div class="mt-3">
-      <img :src="image" class="photo card-img-top" :alt="name">
+  <div class="col">
+    <div class="card mb-3">
+      <!-- <img :src="image" class="photo card-img-top" :alt="name"> -->
       <div class="card-body">
-        <h5 class="card-title mt-3">{{ title }}</h5>
-        <h6 class="card-title">{{ original_title }}</h6>
-        <p class="text-center">{{ vote-average }}</p>
-        <p class="text-center">{{ original_language }}</p>
+        <h5 class="card-title mt-3">{{ cardObj.title || cardObj.name }}</h5>
+        <h6 class="card-subtitle mb-3 text-body-secondary">{{ cardObj.original_title || cardObj.original_name}}</h6>
+        <p class="text-text">{{ cardObj.vote_average }}</p>
+        <p class="text-text">{{ cardObj.original_language }}</p>
       </div>
     </div>
   </div>

@@ -12,11 +12,14 @@ export default {
 </script>
 
 <template>
-  <div class="container text-center">
-    <h1>{{ store.mainTitle }}</h1>
+  <div class="container text-center d-flex">
+    <h1> {{ store.mainTitle }} </h1>
   
   <div>
-    <input type="text" class="form-control" placeholder="search" v-model.trim="store.query">
+    <input type="text" 
+    class="form-control" 
+    placeholder="search" 
+    v-model.trim="store.apiParams.query">
   </div>
   <button @click="$emit('searchMovie')"> cerca</button>
 </div>
@@ -32,6 +35,15 @@ export default {
       color : $primary-color;
       text-align: left;
     }
+    input{
+      margin-top: 30px;
+      
+    }
+    button{
+      margin-top: 30px;
+      height: 30px;
+    }
   }
+
 
 </style>
