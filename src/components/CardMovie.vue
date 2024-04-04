@@ -23,8 +23,10 @@ export default {
       <div class="card-body">
         <h5 class="card-title mt-3">{{ cardObj.title || cardObj.name }}</h5>
         <h6 class="card-subtitle mb-3 text-body-secondary">{{ cardObj.original_title || cardObj.original_name}}</h6>
-        <p class="text-text">{{ cardObj.original_language }}</p>
-        <img :src="store.imgEng" alt="en">
+        <!-- <p class="text-text">{{ cardObj.original_language }}</p> -->
+        <img v-if="cardObj.original_language === 'it'" :src="store.imgIt" alt="it">
+        <img v-else-if="cardObj.original_language === 'en'" :src="store.imgEng" alt="en">
+        <span v-else>{{ cardObj.original_language }}</span>
         <p class="text-text">{{ cardObj.vote_average }}</p>
       </div>
     </div>
