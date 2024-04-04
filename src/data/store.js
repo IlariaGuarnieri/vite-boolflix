@@ -3,7 +3,7 @@ import { reactive } from 'vue'
 export const store = reactive ({
   // qui ci metto le info globali (per ora)
   mainTitle: 'BoolFlix',
-  imgUrl: 'http://image.tmdb.org/t/p/w400/',
+  // imgUrl: 'http://image.tmdb.org/t/p/w400/',
   apiUrl: 'https://api.themoviedb.org/3/search/',
   // apiTvUrl: 'https://api.themoviedb.org/3/search/tv',
   apiParams:{
@@ -16,7 +16,8 @@ export const store = reactive ({
   imgIt: 'img/it.png',
   imgEng: 'img/en.png',
   fullStar: '',
-  emptyStar: ''
+  emptyStar: '',
+  imgAbsent: 'img/public/img/imgpellicolavuota.jpeg'
   // creare un secondo array per le series
 
   // queryParams:{
