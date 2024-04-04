@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="col container ">
     <div class="card mb-3">
-      <!-- <img :src="image" class="photo card-img-top" :alt="name"> -->
+      <img :src="/img/${item.}" class="photo card-img-top" :alt="immagine">
       <div class="card-body">
         <h5 class="card-title mt-3">{{ cardObj.title || cardObj.name }}</h5>
         <h6 class="card-subtitle mb-3 text-body-secondary">{{ cardObj.original_title || cardObj.original_name}}</h6>
