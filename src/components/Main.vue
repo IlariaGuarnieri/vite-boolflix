@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-center my-5 container ">
+  <div class="text-center container ">
     <h3>{{ title }} </h3>
     <div class="row row-cols-4">
       <CardMovie 
@@ -37,8 +37,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-// .container{
-//   background-color: rgb(38, 38, 38);
-//   height: 100vh;
-// }
+.container{
+  background-color: rgb(38, 38, 38);
+
+}
 </style>
