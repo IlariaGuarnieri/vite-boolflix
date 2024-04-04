@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <div class="col">
+  <div class="col container ">
     <div class="card mb-3">
       <!-- <img :src="image" class="photo card-img-top" :alt="name"> -->
       <div class="card-body">
@@ -28,4 +28,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../src/assets/scss/partials/variables';
 
+.container{
+  background-color: rgb(46, 45, 45);
+}
 </style>

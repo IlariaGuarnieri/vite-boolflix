@@ -62,10 +62,10 @@ export default {
 </script>
 
 <template>
-  <Header @searchMovie = "getApi" />
+  <Header @searchMovie = "startSearch" />
   <!-- <CardMovie /> -->
-  <Main type="movie" v-if="store.movie.lenght > 0" />
-  <Main type="movie" v-if="store.movie.lenght > 0" />
+  <Main type="movie" v-if="store.movie.length > 0" />
+  <Main type="tv" v-if="store.tv.length > 0" />
 </template>
 
 <style lang="scss" scoped>
