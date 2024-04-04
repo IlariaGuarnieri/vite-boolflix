@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 export const store = reactive ({
   // qui ci metto le info globali (per ora)
   mainTitle: 'BoolFlix',
+  imgUrl: 'http://image.tmdb.org/t/p/w400/',
   apiUrl: 'https://api.themoviedb.org/3/search/',
   // apiTvUrl: 'https://api.themoviedb.org/3/search/tv',
   apiParams:{
