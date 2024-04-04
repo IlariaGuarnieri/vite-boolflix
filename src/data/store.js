@@ -12,8 +12,8 @@ export const store = reactive ({
   },
   movie: [],
   tv: [],
-  eng: 'img/en.png',
-  it: 'img/it.png'
+  imgIt: 'img/it.png',
+  imgEng: 'img/en.png'
   // creare un secondo array per le series
 
   // queryParams:{
