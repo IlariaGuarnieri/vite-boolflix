@@ -13,15 +13,15 @@ export default {
 
 <template>
   <div class="container text-center d-flex">
-    <h1> {{ store.mainTitle }} </h1>
+    <img class="mt-2" src="/img/logo-boolflix.png" alt="">
   
   <div>
     <input type="text" 
     class="form-control" 
-    placeholder="search" 
+    placeholder="search movie, serie.." 
     v-model.trim="store.apiParams.query">
   </div>
-  <button @click="$emit('searchMovie')"> cerca</button>
+  <button class="btn btn-danger " @click="$emit('searchMovie')"> cerca</button>
 </div>
 </template>
 
@@ -29,18 +29,21 @@ export default {
 @use '../../src/assets/scss/partials/variables' as *;
 
 .container{
-  background-color: $main-color;
-    h1{
-      color : $primary-color;
-      text-align: left;
+  background-color: #262626;
+  justify-content: space-around;
+    img{
+      width: 160px;
+      height: 70px;
     }
     input{
-      margin-top: 30px;
-      
+      margin: 25px;
+      margin-left: 10px;
     }
     button{
-      margin-top: 30px;
+      margin: 30px;
       height: 30px;
+      padding: 2px;
+      width: 80px;
     }
   }
 

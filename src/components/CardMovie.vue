@@ -128,9 +128,10 @@ export default {
 
   .poster{
     height: 400px;
+    width: 100%;
   }
 
-  .cont-poster:hover .hover-zone {
+  // .cont-poster:hover .hover-zone {
     // display: block; // visiono .hover-zone quando sono in hover sopra .cont-poster
     // position: absolute;
     // top: 0;
@@ -140,13 +141,14 @@ export default {
     // height: 100%;
     // padding: 20px; 
 
-  }
+  // }
   .cont-poster:hover + .hover-zone {
     display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
     transition-duration: 2s;
     transition: opacity 0.7s ; // Transizione Opacità
     transition: width 2s;
     transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+
   }
   .card:hover .hover-zone {
     display: block;

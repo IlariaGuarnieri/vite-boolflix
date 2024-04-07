@@ -16,7 +16,7 @@ export default {
   },
   computed:{
     title(){
-      return this.type === 'movie' ? 'film' : 'Serie TV'
+      return this.type === 'movie' ? 'Film' : 'Serie TV'
     }
   }
 }
@@ -40,5 +40,9 @@ export default {
 .container{
   background-color: rgb(38, 38, 38);
 
+}
+h3{
+  color: red;
+  text-transform: uppercase;
 }
 </style>
