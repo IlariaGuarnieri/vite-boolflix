@@ -111,7 +111,7 @@ export default {
     height: 400px;
   }
   .cont-poster:hover .hover-zone {
-    display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
+    display: block; // visiono .hover-zone quando sono in hover sopra .cont-poster
     position: absolute;
     top: 0;
     left: 0;
@@ -124,8 +124,8 @@ export default {
     display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
   }
   .cont-poster:hover .poster {
-    opacity: 0.4; // Riduci l'opacità dell'immagine del poster quando il mouse è sopra .cont-poster
-    transition: opacity 0.3s ease; // Aggiungi una transizione per un effetto più fluido
+    opacity: 0.4; // Ridotta l'opacità dell'immagine del poster quando sono in hover su .cont-poster
+    transition: opacity 0.3s ; // Transizione Opacità
   }
 }
 
