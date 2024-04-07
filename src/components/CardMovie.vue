@@ -36,8 +36,8 @@ export default {
       <!-- <img class="photo card-img-top" v-if=" "   :src="store.imgUrl + cardObj.poster_path"  :alt="immagine"> -->
 
       <div class="cont-poster">
-          <img class="photo card-img-top" v-if= "cardObj.poster_path" :src="`http://image.tmdb.org/t/p/w342${cardObj.poster_path}`"  alt="immagine">
-          <img class="photo card-img-top" v-else src="../assets/img/imgpellicolavuota.jpeg" alt="">
+          <img class=" poster photo card-img-top" v-if= "cardObj.poster_path" :src="`http://image.tmdb.org/t/p/w342${cardObj.poster_path}`"  alt="immagine">
+          <img class="poster photo card-img-top" v-else src="../assets/img/imgpellicolavuota.jpeg" alt="">
 
   <div class="hover-zone">
           <div class="card-body">
@@ -86,7 +86,8 @@ export default {
   // height: 200px;
   // }
   .bandiera{
-  width: 20px;
+  width: 30px;
+  height: 18px;
   }
   span{
   text-transform: uppercase;
@@ -102,15 +103,30 @@ export default {
     overflow-y: auto;
     }
   }
-}
-
-.hover-zone {
+  .hover-zone {
   display: none; // gli elementi sono nascosti
+  position: relative;
+  }
+  .poster{
+    height: 400px;
+  }
+  .cont-poster:hover .hover-zone {
+    display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(150, 6, 6);
+    background-color: rgba(140, 34, 206, 0.331);
+    object-fit: cover;
+    height: 100%;
+  }
+  .cont-poster:hover + .hover-zone {
+    display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
+  }
+  .cont-poster:hover .poster {
+    opacity: 0.4; // Riduci l'opacità dell'immagine del poster quando il mouse è sopra .cont-poster
+    transition: opacity 0.3s ease; // Aggiungi una transizione per un effetto più fluido
+  }
 }
-
-.cont-poster:hover .hover-zone {
-  display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
-}
-
 
 </style>
