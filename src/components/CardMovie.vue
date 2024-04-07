@@ -32,7 +32,7 @@ export default {
 
 <template>
   <div class="col container ">
-    <div class="card mb-4">
+    <div class="card mb-4" style=" position: relative">
       <!-- <img class="photo card-img-top" v-if=" "   :src="store.imgUrl + cardObj.poster_path"  :alt="immagine"> -->
 
       <div class="cont-poster">
@@ -82,9 +82,6 @@ export default {
 
 .container{
   background-color: rgb(46, 45, 45);
-  // .card-body{
-  // height: 200px;
-  // }
   .bandiera{
   width: 30px;
   height: 18px;
@@ -104,29 +101,60 @@ export default {
     }
   }
   .hover-zone {
-  display: none; // gli elementi sono nascosti
-  position: relative;
+  // display: none; // gli elementi sono nascosti
+  // z-index: 1;
+  // padding: 20px;
+  // box-sizing: border-box;
+  // transition: transform 2s ease; /* Aggiungi la transizione per il testo */
+  // transform: translateY(100%);
+  // background-color: rgba(140, 34, 206, 0.331);
+  // color: rgb(150, 6, 6);
+
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); //Sfondo semitrasparente
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
   }
+
+  .card{
+    position: relative;
+  }
+
   .poster{
     height: 400px;
   }
+
   .cont-poster:hover .hover-zone {
-    display: block; // visiono .hover-zone quando sono in hover sopra .cont-poster
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: rgb(150, 6, 6);
-    background-color: rgba(140, 34, 206, 0.331);
-    object-fit: cover;
-    height: 100%;
+    // display: block; // visiono .hover-zone quando sono in hover sopra .cont-poster
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // color: rgb(75, 1, 1);
+    // background-color: rgba(169, 64, 234, 0.368);
+    // height: 100%;
+    // padding: 20px; 
+
   }
   .cont-poster:hover + .hover-zone {
     display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
+    transition-duration: 2s;
+    transition: opacity 0.7s ; // Transizione Opacità
+    transition: width 2s;
+    transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
-  .cont-poster:hover .poster {
-    opacity: 0.4; // Ridotta l'opacità dell'immagine del poster quando sono in hover su .cont-poster
-    transition: opacity 0.3s ; // Transizione Opacità
+  .card:hover .hover-zone {
+    display: block;
+    transform: translateY(0); 
+  }
+
+.card-body{
+  transition: all 2s ease;
   }
 }
-
 </style>
