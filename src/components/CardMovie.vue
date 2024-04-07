@@ -34,19 +34,27 @@ export default {
   <div class="col container ">
     <div class="card mb-4">
       <!-- <img class="photo card-img-top" v-if=" "   :src="store.imgUrl + cardObj.poster_path"  :alt="immagine"> -->
-      <img class="photo card-img-top" v-if= "cardObj.poster_path" :src="`http://image.tmdb.org/t/p/w342${cardObj.poster_path}`"  alt="immagine">
-      <img class="photo card-img-top" v-else src="../assets/img/imgpellicolavuota.jpeg" alt="">
-      <div class="card-body">
-        <h5 class="card-title mt-3">{{ cardObj.title || cardObj.name }}</h5>
-        <h6 class="card-subtitle mb-3 text-body-secondary">{{ cardObj.original_title || cardObj.original_name}}</h6>
-        <!-- <p class="text-text">{{ cardObj.original_language }}</p> -->
-        <!-- v-if e con il v-else-if lo so per dirgli che se l'a lingua originale è 'it' o 'en' lui mette le bandiere -->
-        <img class="bandiera" v-if="cardObj.original_language === 'it'" :src="store.imgIt" alt="it">  
-        <img class="bandiera" v-else-if="cardObj.original_language === 'en'" :src="store.imgEng" alt="en">
-        <!-- con il v-else  se non è ne 'it' ne 'en' stampa la sigla originale -->
-        <span v-else>{{ cardObj.original_language }}</span>
-        <!-- <p class="text-text">{{ getVote() }} </p> -->
-        <div>
+
+      <div class="cont-poster">
+          <img class="photo card-img-top" v-if= "cardObj.poster_path" :src="`http://image.tmdb.org/t/p/w342${cardObj.poster_path}`"  alt="immagine">
+          <img class="photo card-img-top" v-else src="../assets/img/imgpellicolavuota.jpeg" alt="">
+
+  <div class="hover-zone">
+          <div class="card-body">
+          <h5 class="card-title mt-3">{{ cardObj.title || cardObj.name }}</h5>
+          <h6 class="card-subtitle mb-3 text-body-secondary">{{ cardObj.original_title || cardObj.original_name}}</h6>
+          <!-- <p class="text-text">{{ cardObj.original_language }}</p> -->
+          <div class="language">
+            <!-- v-if e con il v-else-if lo so per dirgli che se la lingua originale è 'it' o 'en' lui mette le bandiere -->
+            <img class="bandiera" v-if="cardObj.original_language === 'it'" :src="store.imgIt" alt="it">  
+            <img class="bandiera" v-else-if="cardObj.original_language === 'en'" :src="store.imgEng" alt="en">
+            <!-- con il v-else  se non è ne 'it' ne 'en' stampa la sigla originale -->
+            <span v-else>{{ cardObj.original_language }}</span>
+            <!-- <p class="text-text">{{ getVote() }} </p> -->
+        </div>
+      </div>
+<!-- STELLINE VOTAZIONE FILM -->
+
         <i 
         v-for="star in getVote()"
         :key="star"
@@ -60,13 +68,13 @@ export default {
         class="fa-regular fa-star"
         >
         </i>
-        </div>
+
         <p class="descrizione">{{ cardObj.overview }}</p>
-        
-        
-      </div>
+
+    </div>
     </div>
   </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -74,25 +82,35 @@ export default {
 
 .container{
   background-color: rgb(46, 45, 45);
-}
-
-.bandiera{
+  // .card-body{
+  // height: 200px;
+  // }
+  .bandiera{
   width: 20px;
-}
-span{
+  }
+  span{
   text-transform: uppercase;
-}
-.fa-solid{
+  }
+  .fa-solid{
   color:rgb(18, 78, 58);
   font-size: 1.5rem;
-}
-
-.descrizione{
+  }
+  .descrizione{
   height: 90px;
   overflow: hidden;
   &:hover{
     overflow-y: auto;
+    }
   }
 }
+
+.hover-zone {
+  display: none; // gli elementi sono nascosti
+}
+
+.cont-poster:hover .hover-zone {
+  display: block; // Mostra .hover-zone quando il mouse è sopra .cont-poster
+}
+
 
 </style>
