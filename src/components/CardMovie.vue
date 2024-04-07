@@ -41,8 +41,8 @@ export default {
 
   <div class="hover-zone">
           <div class="card-body">
-          <h5 class="card-title mt-3">{{ cardObj.title || cardObj.name }}</h5>
-          <h6 class="card-subtitle mb-3 text-body-secondary">{{ cardObj.original_title || cardObj.original_name}}</h6>
+          <h5 class="card-title mt-3">Titolo: {{ cardObj.title || cardObj.name }}</h5>
+          <h7 class="card-subtitle mb-3 ">Titolo originale: {{ cardObj.original_title || cardObj.original_name}}</h7>
           <!-- <p class="text-text">{{ cardObj.original_language }}</p> -->
           <div class="language">
             <!-- v-if e con il v-else-if lo so per dirgli che se la lingua originale è 'it' o 'en' lui mette le bandiere -->
@@ -54,8 +54,9 @@ export default {
         </div>
       </div>
 <!-- STELLINE VOTAZIONE FILM -->
-
-        <i 
+<div class="voto d-flex  ">
+      <p>voto: </p>
+      <i 
         v-for="star in getVote()"
         :key="star"
         class="fa-solid fa-star"
@@ -68,8 +69,8 @@ export default {
         class="fa-regular fa-star"
         >
         </i>
-
-        <p class="descrizione">{{ cardObj.overview }}</p>
+      </div>
+        <p class="descrizione">Overview: {{ cardObj.overview }}</p>
 
     </div>
     </div>
@@ -86,11 +87,17 @@ export default {
   width: 30px;
   height: 18px;
   }
+  // p{
+  //   margin-bottom: 1px;
+  // }
+  .voto{
+    margin-left: 40px;
+  }
   span{
   text-transform: uppercase;
   }
-  .fa-solid{
-  color:rgb(18, 78, 58);
+  .fa-solid, .fa-regular{
+  color:yellow;
   font-size: 1.5rem;
   }
   .descrizione{
@@ -159,4 +166,5 @@ export default {
   transition: all 2s ease;
   }
 }
+
 </style>
